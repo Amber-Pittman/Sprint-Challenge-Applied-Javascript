@@ -29,19 +29,27 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-It's the Document Object Model
-  A. An object representation of the html elements of a webpage (although not the html page/file itself).
-  B. The DOM is a bridge between Content and the browser. 
-     Content -> DOM -> Browser
-  C. It's a language neutral API - JavaScript is not the only language that can manipulate it.
+
+####It's the Document Object Model
+  #### A. An object representation of the html elements of a webpage (although not the html page/file itself).
+  #### B. The DOM is a bridge between Content and the browser. Content -> DOM -> Browser
+  #### C. It's a language neutral API - JavaScript is not the only language that can manipulate it.
 
 2. What is an event?
 
+#### DOM events allow JavaScript to register different event handlers on elements in an HTML document.
+
 3. What is an event listener?
+
+#### It is a function that waits until an event occurs, like clicking on a button.
 
 4. Why would we convert a NodeList into an Array?
 
+#### Since NodeLists are limited to the forEach() method, converting them into arrays using the Array.from() method provides us with more options to complete our tasks in JavaScript.
+
 5. What is a component?
+
+#### Web components are reusable code from different technologies (HTML, CSS, JavaScript, etc) that are customized, functional and prevent future code collisions.
 
 ### Git Set up
 
