@@ -25,9 +25,11 @@ const articleCard = document.querySelector(".cards-container");
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-      let articleArray = [];
-
+      let articleArray = response.data.articles;
       console.log(articleArray);
+      articleArray.map(element => {
+          articleCard.appendChild(acCreator(element));
+      });
   })
   .catch(error => {
       console.error(error);
