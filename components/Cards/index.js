@@ -24,8 +24,15 @@ Create a card for each of the articles and add the card to the DOM.
 const articleCard = document.querySelector(".cards-container");
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
-  .then()
-  .catch()
+  .then(response => {
+      let articleArray = [];
+
+      console.log(articleArray);
+  })
+  .catch(error => {
+      console.error(error);
+      console.log('Unsuccessful, please try again later.')
+  })
 
 
 function acCreator() {
