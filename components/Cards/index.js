@@ -20,3 +20,41 @@ DOM component:
 
 Create a card for each of the articles and add the card to the DOM.
 */
+
+const articleCard = document.querySelector(".cards-container");
+
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+  .then()
+  .catch()
+
+
+function acCreator() {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const headline = document.createElement("div");
+    headline.classList.add("headline");
+    headline.textContent = tab.headline;// Pulls from the Tabs JS File
+    card.appendChild(headline);
+
+    const author = document.createElement("div");
+    author.classList.add("author");
+
+    const imgDiv = document.createElement("div");
+    imgDiv.classList.add("img-container");
+
+    const image = document.createElement("img");
+    img.src = tab.authorPhoto;
+    console.log(tab.authorPhoto);
+    imgDiv.appendChild(img);
+
+    const authorName = document.createElement("span");
+    authorName.textContent = `By ${tab.authorName}`;
+    authorName.appendChild(imgDiv);
+    authorName.appendChild(authorName);
+
+    card.appendChild(authorName);
+
+
+    return card;
+}
