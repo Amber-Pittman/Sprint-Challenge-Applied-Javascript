@@ -46,23 +46,6 @@ axios.get("https://lambda-times-backend.herokuapp.com/articles")
   }));
 
 
-  //   let articleArray = response.data.topics;
-  //   console.log(`This is the articleArray: `);
-  //   articleArray.forEach(element => {
-  //     articleCard.appendChild(acCreator(element));
-  //   });
-  // }));
-  //     response.data.articles.forEach((topic) => {
-  //       let articleArray = acCreator(topic);
-  //       console.log(articleArray);
-  //     });
-  // }))
-  // .catch((error => {
-  //     //console.error(error);
-  //     console.log('Unsuccessful, please try again later.')
-  // }));
-
-
 function acCreator(tab) {
     const card = document.createElement("div");
     card.classList.add("card");
