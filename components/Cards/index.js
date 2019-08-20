@@ -21,29 +21,55 @@ DOM component:
 Create a card for each of the articles and add the card to the DOM.
 */
 
-const articleCard = document.querySelector(".cards-container");
+const articleCard = document.querySelector(".cards-container"); 
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
-  .then(response => {
-      let articleArray = response.data.articles;
-      console.log(articleArray);
-      articleArray.map(element => {
-          articleCard.appendChild(acCreator(element));
-      });
-  })
-  .catch(error => {
-      console.error(error);
-      console.log('Unsuccessful, please try again later.')
-  })
+  .then((response => {
+    let data = response.data.articles;
+    let bootstrap = data.bootstrap;
+    let javascript = data.javascript;
+    let tech = data.technology;
+    let jquery = data.jquery;
+    let node = data.node;
+
+    function cardInfo(array) {
+      array.forEach((item) => {
+        articleCard.appendChild(acCreator(item));
+      })
+    }
+
+    cardInfo(bootstrap);
+    cardInfo(javascript);
+    cardInfo(tech);
+    cardInfo(jquery);
+    cardInfo(node);
+  }));
 
 
-function acCreator() {
+  //   let articleArray = response.data.topics;
+  //   console.log(`This is the articleArray: `);
+  //   articleArray.forEach(element => {
+  //     articleCard.appendChild(acCreator(element));
+  //   });
+  // }));
+  //     response.data.articles.forEach((topic) => {
+  //       let articleArray = acCreator(topic);
+  //       console.log(articleArray);
+  //     });
+  // }))
+  // .catch((error => {
+  //     //console.error(error);
+  //     console.log('Unsuccessful, please try again later.')
+  // }));
+
+
+function acCreator(tab) {
     const card = document.createElement("div");
     card.classList.add("card");
 
     const headline = document.createElement("div");
     headline.classList.add("headline");
-    headline.textContent = tab.headline;// Pulls from the Tabs JS File
+    headline.textContent = tab.headline;
     card.appendChild(headline);
 
     const author = document.createElement("div");
@@ -53,16 +79,16 @@ function acCreator() {
     imgDiv.classList.add("img-container");
 
     const image = document.createElement("img");
-    img.src = tab.authorPhoto;
+    image.src = tab.authorPhoto;
     console.log(tab.authorPhoto);
-    imgDiv.appendChild(img);
+    imgDiv.appendChild(image);
 
     const authorName = document.createElement("span");
     authorName.textContent = `By ${tab.authorName}`;
-    authorName.appendChild(imgDiv);
-    authorName.appendChild(authorName);
+    author.appendChild(imgDiv);
+    author.appendChild(authorName);
 
-    card.appendChild(authorName);
+    card.appendChild(author);
 
 
     return card;
